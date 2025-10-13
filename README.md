@@ -6,7 +6,7 @@
 ## Website Link
 
 [Cookbook Website](https://creative-creponne-51f429.netlify.app/)
-The website have lots of delays/lags since I am using free tier services 🙇. 
+The website experiences significant delays and lags because I am using free-tier services. Thank you for your understanding 🙇. 
 
 ## Tech Stack
 
