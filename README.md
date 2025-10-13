@@ -13,6 +13,8 @@ The website experiences significant delays and lags because I am using free-tier
 * **Java Spring Boot** as the framework
 * **MongoDB** as the main database to store cookbook details
 * **Backblaze B2 Cloud Storage** for storing cookbook image
+* **Railway** free tiers for hosting the backend
+* **Netlify** free tiers for hosting the frontend
 
 ## Features
 
