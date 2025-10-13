@@ -9,6 +9,5 @@ import java.util.Optional;
 
 @Repository
 public interface CookbookRepository extends MongoRepository<Cookbook, ObjectId> {
-
     Optional<Cookbook> findByName(String name);
 }
