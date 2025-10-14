@@ -37,5 +37,5 @@ The website experiences significant delays and lags because I am using free-tier
 * Sanitizing user inputs before storing them in database
 * Improved version control and main branch protection
 * Application testing through unit tests, user tests and load tests
-* Automatic deployment
+* Automatic deployment using CI/CD pipelines such as Jenkins
 * Further integration with other free-tier services
