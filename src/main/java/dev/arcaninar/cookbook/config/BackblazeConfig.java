@@ -13,15 +13,15 @@ import java.net.URISyntaxException;
 
 @Configuration
 public class BackblazeConfig {
+    private final String endpointUrl;
+    private final String accessKey;
+    private final String secretKey;
 
-    @Value("${backblaze.s3.endpoint}")
-    private String endpointUrl;
-
-    @Value("${backblaze.s3.access.key}")
-    private String accessKey;
-
-    @Value("${backblaze.s3.secret.key}")
-    private String secretKey;
+    public BackblazeConfig(@Value("${backblaze.s3.endpoint}") String endpointUrl, @Value("${backblaze.s3.access.key}") String accessKey, @Value("${backblaze.s3.secret.key}") String secretKey) {
+        this.endpointUrl = endpointUrl;
+        this.accessKey = accessKey;
+        this.secretKey = secretKey;
+    }
 
     @Bean
     public S3Client s3Client() throws URISyntaxException {

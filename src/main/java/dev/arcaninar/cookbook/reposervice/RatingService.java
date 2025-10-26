@@ -15,14 +15,16 @@ import java.util.Objects;
 
 @Service
 public class RatingService {
-    @Autowired
-    private RatingRepository ratingRepository;
+    private final RatingRepository ratingRepository;
+    private final MongoTemplate mongoTemplate;
+    private final CookbookService cookbookService;
 
     @Autowired
-    private MongoTemplate mongoTemplate;
-
-    @Autowired
-    private CookbookService cookbookService;
+    public RatingService(RatingRepository ratingRepository, MongoTemplate mongoTemplate, CookbookService cookbookService) {
+        this.ratingRepository = ratingRepository;
+        this.mongoTemplate = mongoTemplate;
+        this.cookbookService = cookbookService;
+    }
 
     public Rating createRating(Integer ratingValue, String review, String cookbookId) {
         Rating rating = ratingRepository.insert(new Rating(ratingValue, review));

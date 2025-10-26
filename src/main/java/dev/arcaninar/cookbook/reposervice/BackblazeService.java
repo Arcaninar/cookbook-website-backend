@@ -12,12 +12,14 @@ import java.util.Base64;
 
 @Service
 public class BackblazeService {
+    private final S3Client s3Client;
+    private final String bucketName;
 
     @Autowired
-    private S3Client s3Client;
-
-    @Value("${backblaze.s3.bucket.name}")
-    private String bucketName;
+    public BackblazeService(S3Client s3Client, @Value("${backblaze.s3.bucket.name}") String bucketName) {
+        this.s3Client = s3Client;
+        this.bucketName = bucketName;
+    }
 
     public String getImageBase64(String fileName) {
         GetObjectRequest getObjectRequest = GetObjectRequest.builder()

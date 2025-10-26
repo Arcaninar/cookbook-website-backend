@@ -17,12 +17,16 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/v1")
 public class ApiController {
+    private final SimpleCookbookService simpleCookbookService;
+    private final CookbookService cookbookService;
+    private final RatingService ratingService;
+
     @Autowired
-    private SimpleCookbookService simpleCookbookService;
-    @Autowired
-    private CookbookService cookbookService;
-    @Autowired
-    private RatingService ratingService;
+    public ApiController(SimpleCookbookService simpleCookbookService, CookbookService cookbookService, RatingService ratingService) {
+        this.simpleCookbookService = simpleCookbookService;
+        this.cookbookService = cookbookService;
+        this.ratingService = ratingService;
+    }
 
     @GetMapping("/cookbooks")
     public ResponseEntity<List<SimpleCookbook>> getAllCookbooks() {

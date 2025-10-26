@@ -11,11 +11,14 @@ import java.util.Map.Entry;
 
 @Service
 public class CookbookService {
-    @Autowired
-    private CookbookRepository cookbookRepository;
+    private final CookbookRepository cookbookRepository;
+    private final BackblazeService backblazeService;
 
     @Autowired
-    private BackblazeService backblazeService;
+    public CookbookService(CookbookRepository cookbookRepository, BackblazeService backblazeService) {
+        this.cookbookRepository = cookbookRepository;
+        this.backblazeService = backblazeService;
+    }
 
     public Cookbook cookbookById(String id) {
         Cookbook cookbook = cookbookRepository.findById(new ObjectId(id)).orElse(new Cookbook());

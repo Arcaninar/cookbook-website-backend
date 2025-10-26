@@ -8,11 +8,14 @@ import java.util.List;
 
 @Service
 public class SimpleCookbookService {
-    @Autowired
-    private SimpleCookbookRepository simpleCookbookRepository;
+    private final SimpleCookbookRepository simpleCookbookRepository;
+    private final BackblazeService backblazeService;
 
     @Autowired
-    private BackblazeService backblazeService;
+    public SimpleCookbookService(SimpleCookbookRepository simpleCookbookRepository, BackblazeService backblazeService) {
+        this.simpleCookbookRepository = simpleCookbookRepository;
+        this.backblazeService = backblazeService;
+    }
 
     private List<SimpleCookbook> convertImageToBase64(List<SimpleCookbook> simpleCookbookList) {
         for (SimpleCookbook simpleCookbook: simpleCookbookList) {
