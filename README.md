@@ -3,11 +3,6 @@
 > This personal project is to showcase a website's backend using Java Spring Boot
 <hr>
 
-## Website Link
-
-[Cookbook Website](https://creative-creponne-51f429.netlify.app/)
-The website experiences significant delays and lags because I am using free-tier services. Thank you for your understanding 🙇. 
-
 ## Tech Stack
 
 * **Java Spring Boot** as the framework
